@@ -31,7 +31,7 @@
 		this.place = place;
 	};
 
-	kolobok.setPlace('window');
+	kolobok.setPlace('on the window');
 
 	setTimeout(function () {
 		kolobok.roll(farFarAway);
