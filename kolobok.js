@@ -69,7 +69,7 @@
 		var acquaintances = this.acquaintances.slice();
 		return 'I beg you, ' + acquaintances.pop() + '.\n' +
 			'Don’t eat me, please.\n' +
-			(this.acquaintances.length > 1 ? 'I escaped from ' + acquaintances.join(', ') + '\n' : '') +
+			(this.acquaintances.length > 1 ? 'I run away from ' + acquaintances.join(', ') + '\n' : '') +
 			'I’ll trick you';
 	};
 
