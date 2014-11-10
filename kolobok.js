@@ -1,7 +1,7 @@
 (function () {
 
 	var Entity = function () {};
-	function inherit(Base, name) {
+	function inherit(Base) {
  		var Ctor = function () {};
 		Ctor.prototype = new Base();
 		return Ctor;
