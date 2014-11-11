@@ -1,20 +1,21 @@
 (function () {
 
-	var Entity = function () {};
-	function inherit(Base) {
- 		var Ctor = function () {};
-		Ctor.prototype = new Base();
-		return Ctor;
+	function defineClass(Base) {
+		var Entity = function () {};
+		if (Base) {
+			Entity.prototype = new Base();
+		}
+		return Entity;
 	}
 
 
 
-	var Person = inherit(Entity);
+	var Person = defineClass();
 
 	var grandDad = new Person();
 	var grandMom = new Person();
 
-	var RoundBread = inherit(Entity);
+	var RoundBread = defineClass();
 
 	Person.prototype.ask = function (person) {
 		return {
@@ -75,7 +76,7 @@
 
 	function farFarAway(escapee) {
 
-		var Creature = inherit(Entity);
+		var Creature = defineClass();
 		Creature.prototype.on = function (request, responseFn) {
 			this.requests = this.requests || {};
 			this.requests[request] = responseFn;
@@ -92,22 +93,22 @@
 
 		[
 			function () {
-				var Hare = inherit(Creature);
+				var Hare = defineClass(Creature);
 				Hare.prototype.name = 'Hare';
 				return new Hare();
 			},
 			function () {
-				var Wolf = inherit(Creature);
+				var Wolf = defineClass(Creature);
 				Wolf.prototype.name = 'Wolf';
 				return new Wolf();
 			},
 			function () {
-				var Bear = inherit(Creature);
+				var Bear = defineClass(Creature);
 				Bear.prototype.name = 'Bear';
 				return new Bear();
 			},
 			function () {
-				var Fox = inherit(Creature);
+				var Fox = defineClass(Creature);
 				Fox.prototype.name = 'Fox';
 				Fox.prototype.replaceAttack = function (fn) {
 					Fox.prototype.attack = fn;
