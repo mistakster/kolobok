@@ -91,7 +91,17 @@
 		};
 
 
-		[
+		(function (paths) {
+		
+			paths.forEach(function (road) {
+				var animal = road();
+				escapee.meet(animal);
+				do {
+					animal.trigger('eat');
+				} while (animal.attack());
+			});
+			
+		}([
 			function () {
 				var Hare = defineClass(Creature);
 				Hare.prototype.name = 'Hare';
@@ -129,13 +139,7 @@
 
 				return new Fox();
 			}
-		].forEach(function (road) {
-				var animal = road();
-				escapee.meet(animal);
-				do {
-					animal.trigger('eat');
-				} while (animal.attack())
-			});
+		]));
 
 		console.info('The end!');
 	}
