@@ -2,9 +2,21 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Kolobok</title>
 </head>
 <body>
+	<div id="out"></div>
+	<script>
+		function print(msg) {
+			var pre = document.createElement('pre');
+			pre.appendChild(document.createTextNode(msg));
+			document.getElementById('out').appendChild(pre);
+		}
+		window['console'] = {
+			log: print,
+			info: print
+		}
+	</script>
 	<script src="kolobok.js"></script>
 </body>
 </html>
